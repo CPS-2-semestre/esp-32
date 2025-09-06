@@ -10,7 +10,7 @@ O projeto foi pensado como uma **Prova de Conceito (PoC)** para demonstrar como 
 
 O objetivo do projeto é criar uma solução prática de IoT que demonstre:
 
-- Controle remoto de uma lâmpada inteligente (ligar/desligar, brilho, cor).
+- Controle remoto de uma lâmpada inteligente (ligar/desligar e checar a luminosidade do ambiente).
 - Monitoramento do estado atual da lâmpada.
 - Integração com o **Orion Context Broker** para gerenciamento de dados contextuais.
 - Registro de dados históricos no **STH‑Comet**.
@@ -73,7 +73,7 @@ As **collections do Postman** facilitam a interação com a Smart Lamp e os comp
 ### 1. Importando a coleção
 1. Abra o Postman.  
 2. Clique em **Import**.  
-3. Faça o upload do arquivo `FIWARE Descomplicado.postman_collection.json`.  
+3. Faça o upload do arquivo `arquivo postman.json`.  
 4. A coleção será carregada.
 
 ### 2. Configurando o ambiente
@@ -90,8 +90,6 @@ Na coleção você encontrará:
 
 - **Ligar lâmpada** → `GET {{base_url}}/lamp/on`  
 - **Desligar lâmpada** → `GET {{base_url}}/lamp/off`  
-- **Alterar intensidade** → `POST {{base_url}}/lamp/brightness`  
-- **Alterar cor** → `POST {{base_url}}/lamp/color`  
 - **Consultar estado** → `GET {{base_url}}/lamp/status`
 
 ### 4. Consultando dados históricos
@@ -166,3 +164,10 @@ A **Smart Lamp** demonstra como integrar um dispositivo real com o **FIWARE**, u
 
 #### © 2025 CPS – 2º Semestre, todos os direitos reservados.
 
+
+## Equipe 
+-Lucas de Almeida Sales da Silva
+-André Ricardo Spinola Castor
+-João Pedro Palmera
+-Eduardo Delarissia
+-Gabriel Viana
