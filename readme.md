@@ -25,7 +25,7 @@ Essa arquitetura simples pode ser expandida para aplicações em **casas intelig
 ### Hardware
 
 - ESP32 DevKit V1  
-- LED RGB (ou lâmpada compatível)  
+- Sensor LDR
 - Resistores e jumpers  
 - Protoboard  
 
@@ -61,7 +61,7 @@ A arquitetura é composta por três camadas principais:
 3. **Aplicação** → Interface para interação com o usuário, incluindo dashboards e collections no Postman.
 
 <p align="center">
-  <img src="FiwareDeploy_new_v5.png" alt="Arquitetura FIWARE Descomplicado">
+<img width="992" height="961" src="https://github.com/user-attachments/assets/dd7edb84-b625-4a26-83c2-146d94c5629f" alt="Arquitetura FIWARE Descomplicado"/ >
 </p>
 
 ---
@@ -80,7 +80,7 @@ As **collections do Postman** facilitam a interação com a Smart Lamp e os comp
 Crie um **Environment** no Postman com:
 
 ```
-base_url = http://<ip-do-esp32>
+base_url = http://<ip-da-VM>
 ```
 
 E adicione os endpoints do Orion e do IoT Agent.
@@ -88,20 +88,9 @@ E adicione os endpoints do Orion e do IoT Agent.
 ### 3. Executando requisições
 Na coleção você encontrará:
 
-- **Ligar lâmpada** → `GET {{base_url}}/lamp/on`  
-- **Desligar lâmpada** → `GET {{base_url}}/lamp/off`  
-- **Consultar estado** → `GET {{base_url}}/lamp/status`
-
-### 4. Consultando dados históricos
-Utilize os endpoints do **STH‑Comet** para consultar séries temporais:
-
-```http
-GET http://localhost:8666/STH/v1/contextEntities/type/Lamp/id/SmartLamp1/attributes/state
-```
-
-<p align="center">
-  <img src="https://github.com/fabiocabrini/fiware/blob/main/sth-comet-m.jpg" alt="Dashboard STH‑Comet">
-</p>
+- **Ligar lâmpada** → Metodo 'switching on the smart lamp' 
+- **Desligar lâmpada** → Trocar Metodo 'switching on the smart lamp' para off   
+- **Consultar estado** → Metodos 7 e 8
 
 ---
 
@@ -114,15 +103,12 @@ A entidade "Smart Lamp" no **Orion Context Broker** é representada como:
   "id": "SmartLamp1",
   "type": "Lamp",
   "state": { "value": "off", "type": "Text" },
-  "brightness": { "value": 80, "type": "Integer" },
-  "color": { "value": "#FFFFFF", "type": "Text" }
 }
 ```
 
 A entidade pode ser manipulada via API ou pelo Postman.
 
-- **Atributos de Estado** → Ligar/desligar.  
-- **Atributos de Controle** → Ajustar brilho e cor.  
+- **Atributos de Estado** → Ligar/desligar.   
 - **Sensoriamento Opcional** → Monitorar luminosidade ou consumo.
 
 Links úteis:
@@ -165,9 +151,9 @@ A **Smart Lamp** demonstra como integrar um dispositivo real com o **FIWARE**, u
 #### © 2025 CPS – 2º Semestre, todos os direitos reservados.
 
 
-## Equipe 
--Lucas de Almeida Sales da Silva
--André Ricardo Spinola Castor
--João Pedro Palmera
--Eduardo Delarissia
--Gabriel Viana
+# Equipe 
+- Lucas de Almeida Sales da Silva
+- André Ricardo Spinola Castor
+- João Pedro Palmera
+- Eduardo Delarissia
+- Gabriel Viana
